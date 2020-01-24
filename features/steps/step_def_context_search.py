@@ -2,7 +2,7 @@ from behave import given, when, then
 from features.steps.step_imp_context_search import *
 import allure
 
-expected_error_message = """selected Country(s) 'Argentina", "Austria", "Belgium", "Canada", "Chile", "China' may not be valid for your current Appliance Model and/or Version selection."""
+expected_error_message = """The selected Country(s) 'Argentina", "Austria", "Belgium", "Canada", "Chile", "China' may not be valid for your current Appliance Model and/or Version selection."""
 
 
 @when('Select Appliance Model "{model_no}" from Appliance Model drop-down')
