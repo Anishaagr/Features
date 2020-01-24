@@ -1,0 +1,13 @@
+{
+  "appliance_model": {
+    "3340": ["Australia", "Brazil", "Colombia", "Finland", "France", "Greece", "India", "Italy", "Korea, Republic Of",
+              "Mexico", "Netherlands", "Norway", "Singapore", "South Africa", "Sweden", "Thailand", "Turkey",
+              "United Kingdom", "United States"],
+    "5220": ["Argentina", "Australia", "Austria", "Belgium", "Brazil", "Canada", "Chile", "China", "Denmark",
+              "Dominican Republic", "Egypt", "El Salvador", "Finland", "France", "Germany", "Gibraltar", "Greece",
+              "Hong Kong", "India", "Ireland", "Israel", "Italy", "Japan", "Korea, Republic Of", "Kuwait", "Luxembourg",
+              "Macau", "Mexico", "Monaco", "Netherlands", "New Zealand", "Norway", "Poland", "Portugal", "Qatar",
+              "Russian Federation", "Saudi Arabia", "Singapore", "South Africa", "Spain", "Sweden", "Switzerland",
+              "Taiwan", "Turkey", "United Arab Emirates", "United Kingdom", "United States"]
+  }
+}
