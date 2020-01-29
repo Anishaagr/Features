@@ -8,33 +8,34 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 
-chromeDriverEXE = 'utilities/chromedriver.exe'
+chromeDriverEXE = 'C:/Users/anisha.agarwal/PycharmProjects/cortex/features/utilities/chromedriver.exe'
 country_data = read_json()
 
 
 list_of_country_from_ui = []
-APPLIANCE_MODEL_DROP_DOWN = "//input[@id='vdl-input-15']"
-APPLIANCE_MODEL_3340 = "//vdl-checkbox//div[text()= '3340']"
-APPLIANCE_MODEL_5220 = "//vdl-checkbox//div[text()= '5220']"
+ADVANCE_SEARCH = "//a[text()='Advanced search']"
+APPLIANCE_MODEL_DROP_DOWN = "//input[@id='vdl-input-7']"
+APPLIANCE_MODEL_3340 = "//vdl-checkbox//div[text()= '3340 ']"
+APPLIANCE_MODEL_5220 = "//vdl-checkbox//div[text()= '5220 ']"
 ADD_FILTER = "//lib-string-filter//div[text()='Add Filter']"
-CLICK_FILTER_DROP_DOWN = "//input[@id='vdl-input-1']"
-ADD_COUNTRY_FILTER = "//vdl-checkbox//div[text()='Country']"
-ADD_STATE_FILTER = "//vdl-checkbox//div[text()='State']"
-ADD_CITY_FILTER = "//vdl-checkbox//div[text()='City']"
-ADD_ACCOUNTNAME_FILTER = "//vdl-checkbox//div[text()='Account Name']"
-ADD_HOSTNAME_FILTER = "//vdl-checkbox//div[text()='Hostname']"
-COUNTRY_DROP_DOWN = "//input[@id='vdl-input-25']"
+CLICK_FILTER_DROP_DOWN = "//input[@id='vdl-input-2']"
+ADD_COUNTRY_FILTER = "//vdl-checkbox//div[text()='Country ']"
+ADD_STATE_FILTER = "//vdl-checkbox//div[text()='State ']"
+ADD_CITY_FILTER = "//vdl-checkbox//div[text()='City ']"
+ADD_ACCOUNTNAME_FILTER = "//vdl-checkbox//div[text()='Account Name ']"
+ADD_HOSTNAME_FILTER = "//vdl-checkbox//div[text()='Hostname ']"
+COUNTRY_DROP_DOWN = "//input[@id='vdl-input-17']"
 COUNTRY_COLUMN = "//lib-string-filter//div[text()='Country']"
 LIST_OF_COUNTRY_IN_COUNTRY_DROP_DOWN = "//*[@class='vdl-checkbox-label-text ng-star-inserted"
 CLEAR_SELECTED = "//div[@class='cdk-overlay-pane']//div[text()='Clear selected items']"
-VERSION_2_7_1 = "//vdl-checkbox//div[text()='2.7.1']"
-VERSION_DROP_DOWN = "//input[@id='vdl-input-17']"
+VERSION_2_7_1 = "//vdl-checkbox//div[text()='2.7.1 ']"
+VERSION_DROP_DOWN = "//input[@id='vdl-input-9']"
 NO_SEARCH_RESULTS = "//b[text()=' No Search Results']"
 NOT_FOUND = "//div[contains(@id,'cdk-overlay-')]//vdl-checkbox"
-STATE_DROP_DOWN = "//input[@id='vdl-input-27']"
-CITY_DROP_DOWN = "//input[@id='vdl-input-29']"
-ACCOUNTNAME_DROP_DOWN = "//input[@id='vdl-input-31']"
-HOSTNAME_DROP_DOWN = "//input[@id='vdl-input-33']"
+STATE_DROP_DOWN = "//input[@id='vdl-input-19']"
+CITY_DROP_DOWN = "//input[@id='vdl-input-21']"
+ACCOUNTNAME_DROP_DOWN = "//input[@id='vdl-input-23']"
+HOSTNAME_DROP_DOWN = "//input[@id='vdl-input-25']"
 LIST_OF_COUNTRY = "//*[@class='vdl-checkbox-label-text ng-star-inserted']"
 ERROR_ICON = "//vdl-icon[@class='invalid-selection-icon vdl-icon fa fa-exclamation-circle ng-star-inserted']"
 ERROR_MESSAGE = "//div[@class='vdl-tooltip ng-trigger ng-trigger-state']"
@@ -43,11 +44,12 @@ IGNORED_EXCEPTIONS = [NoSuchElementException, ElementNotVisibleException, Elemen
                       ElementClickInterceptedException, StaleElementReferenceException]
 
 
-def navigate_to_advance_search_page(url):
+def cortex_ui_page(url):
     global driver
     driver = Chrome(executable_path=chromeDriverEXE)
     driver.get(url)
     driver.maximize_window()
+    print(driver)
     return driver
 
 
@@ -57,8 +59,13 @@ def webdriver_shutdown():
 
 
 def xpath(element):
-    wait = WebDriverWait(driver, 10, poll_frequency=2, ignored_exceptions=IGNORED_EXCEPTIONS)
+    wait = WebDriverWait(driver, 20, poll_frequency=2, ignored_exceptions=IGNORED_EXCEPTIONS)
     return wait.until(EC.presence_of_element_located((By.XPATH, element)))
+
+
+def navigate_to_advance_serach_page():
+    driver.find_element_by_xpath(ADVANCE_SEARCH).click()
+    time.sleep(5)
 
 
 def clear_selected(drop_down_filter_name):

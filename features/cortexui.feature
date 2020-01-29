@@ -1,5 +1,6 @@
 Feature: Context Search between primary filters and secondary drop-down filters
   Scenario: Select Appliance model 3340 and verify context search in Country drop-down filter
+#    Given On Advance Search page
     When Select Appliance Model "5220" from Appliance Model drop-down
     Then Get list of Country for "5220" appliance model
     When Select Appliance Model "3340" from Appliance Model drop-down

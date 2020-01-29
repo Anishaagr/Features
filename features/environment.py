@@ -1,15 +1,16 @@
-from features.steps.step_imp_context_search import webdriver_shutdown, navigate_to_advance_search_page, add_filters, clear_selected
+from features.steps.step_imp_context_search import webdriver_shutdown, cortex_ui_page, add_filters, clear_selected, navigate_to_advance_serach_page
 
-URL = "http://localhost:4200/"
+URL = "http://localhost:4201/"
 
 
 def before_feature(context, feature):
     if "Context Search between primary filters and secondary drop-down filters" in str(feature):
-        navigate_to_advance_search_page(URL)
+        cortex_ui_page(URL)
 
 
 def before_scenario(context, scenario):
     if "Select Appliance model 3340 and verify context search in Country drop-down filter" in str(scenario):
+        navigate_to_advance_serach_page()
         add_filters()
 
 

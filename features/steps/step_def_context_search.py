@@ -1,8 +1,16 @@
 from behave import given, when, then
 from features.steps.step_imp_context_search import *
-import allure
+
 
 expected_error_message = """The selected Country(s) 'Argentina", "Austria", "Belgium", "Canada", "Chile", "China' may not be valid for your current Appliance Model and/or Version selection."""
+
+
+# @given('On Advance Search page')
+# def step_impl(context):
+#     print("On advance search page")
+#     cortex_ui_page("http://localhost:4201/")
+#     navigate_to_advance_serach_page()
+#     add_filters()
 
 
 @when('Select Appliance Model "{model_no}" from Appliance Model drop-down')
