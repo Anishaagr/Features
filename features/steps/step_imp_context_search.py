@@ -8,7 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 import time
 
 
-chromeDriverEXE = 'C:/Users/anisha.agarwal/PycharmProjects/cortex/features/utilities/chromedriver.exe'
+chromeDriverEXE = '/utilities/chromedriver.exe'
 country_data = read_json()
 
 
